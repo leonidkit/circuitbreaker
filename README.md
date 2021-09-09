@@ -2,7 +2,7 @@
 Implementation of the Circuit Breaker pattern. Implemented using the `sync/atomic` package.
 
 ### Features:
-* Use `Interval` to set the interval after which it will cleal counters. Default store all counters of requests (successful, throtlled, etc.).
+* Use `Interval` to set the interval after which it will clear counters. Default store all counters of requests (successful, throtlled, etc.).
 * Use `Timeout` to set the interval after which it will switch to the HalfClosed state. Default 1 second.
 * Use `Treshold` to set threshold value for consecutive errors. Default 1.
 * Use `MaxRequests` to set value for max request number in state HalfClosed.
