@@ -4,6 +4,7 @@ import (
 	"testing"
 	"time"
 
+	"github.com/leonidkit/circuitbreaker"
 	"github.com/stretchr/testify/assert"
 )
 

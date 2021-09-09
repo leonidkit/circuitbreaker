@@ -1,4 +1,4 @@
-module circuitbreaker
+module github.com/leonidkit/circuitbreaker
 
 go 1.15
 
