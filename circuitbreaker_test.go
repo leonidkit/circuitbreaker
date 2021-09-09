@@ -1,16 +1,15 @@
-package circuitbreaker_test
+package circuitbreaker
 
 import (
 	"testing"
 	"time"
 
-	"github.com/leonidkit/circuitbreaker"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestNewCircuitBreaker(t *testing.T) {
 	// test default
-	cb := circuitbreaker.New(circuitbreaker.Settings{})
+	cb := New(Settings{})
 	assert.Equal(t, uint32(1), cb.state)
 	assert.Equal(t, time.Duration(0), cb.interval)
 	assert.Equal(t, time.Second, cb.timeout)
@@ -18,7 +17,7 @@ func TestNewCircuitBreaker(t *testing.T) {
 	assert.Equal(t, uint32(1), cb.threshold)
 
 	// test custom
-	cb = circuitbreaker.New(circuitbreaker.Settings{
+	cb = New(Settings{
 		Interval:    10 * time.Second,
 		Timeout:     3 * time.Second,
 		Threshold:   2,
