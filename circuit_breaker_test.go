@@ -1,4 +1,4 @@
-package circuit_breaker
+package circuitbreaker_test
 
 import (
 	"testing"
@@ -9,7 +9,7 @@ import (
 
 func TestNewCircuitBreaker(t *testing.T) {
 	// test default
-	cb := New(Settings{})
+	cb := circuitbreaker.New(circuitbreaker.Settings{})
 	assert.Equal(t, uint32(1), cb.state)
 	assert.Equal(t, time.Duration(0), cb.interval)
 	assert.Equal(t, time.Second, cb.timeout)
@@ -17,7 +17,7 @@ func TestNewCircuitBreaker(t *testing.T) {
 	assert.Equal(t, uint32(1), cb.threshold)
 
 	// test custom
-	cb = New(Settings{
+	cb = circuitbreaker.New(circuitbreaker.Settings{
 		Interval:    10 * time.Second,
 		Timeout:     3 * time.Second,
 		Threshold:   2,

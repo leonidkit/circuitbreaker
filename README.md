@@ -9,7 +9,7 @@ Implementation of the Circuit Breaker pattern. Implemented using the `sync/atomi
 
 ### Example
 ```
-cb := circuit_breaker.New(circuit_breaker.Settings{
+cb := circuitbreaker.New(circuitbreaker.Settings{
     Timeout:     2 * time.Second,
     Threshold:   2,
     MaxRequests: 2,

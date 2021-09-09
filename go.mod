@@ -1,4 +1,4 @@
-module circuit_breaker
+module circuitbreaker
 
 go 1.15
 

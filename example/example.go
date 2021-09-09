@@ -1,7 +1,6 @@
 package main
 
 import (
-	"circuit_breaker"
 	"fmt"
 	"log"
 	"math/rand"
@@ -9,6 +8,8 @@ import (
 	"net/http/httptest"
 	"sync"
 	"time"
+
+	"github.com/leonidkit/circuitbreaker"
 )
 
 const (
@@ -35,7 +36,7 @@ func main() {
 	srv := setUpTestServer()
 
 	// CircuitBreaker initialization
-	cb := circuit_breaker.New(circuit_breaker.Settings{
+	cb := circuitbreaker.New(circuitbreaker.Settings{
 		Timeout:     1 * time.Millisecond,
 		Threshold:   2,
 		MaxRequests: 10,
