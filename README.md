@@ -1,6 +1,8 @@
 ## Circuit Breaker tool
 Implementation of the Circuit Breaker pattern. Implemented using the `sync/atomic` package.
 
+![Circuit Breaker scheme](https://github.com/leonidkit/circuitbreaker.png)
+
 ### Features:
 * Use `Interval` to set the interval after which it will clear counters. Default store all counters of requests (successful, throtlled, etc.).
 * Use `Timeout` to set the interval after which it will switch to the HalfClosed state. Default 1 second.
