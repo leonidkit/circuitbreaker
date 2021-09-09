@@ -1,7 +1,7 @@
 ## Circuit Breaker tool
 Implementation of the Circuit Breaker pattern. Implemented using the `sync/atomic` package.
 
-![Circuit Breaker scheme](https://github.com/leonidkit/circuitbreaker.png)
+![Circuit Breaker scheme](https://github.com/leonidkit/circuitbreaker/circuitbreaker.png)
 
 ### Features:
 * Use `Interval` to set the interval after which it will clear counters. Default store all counters of requests (successful, throtlled, etc.).
